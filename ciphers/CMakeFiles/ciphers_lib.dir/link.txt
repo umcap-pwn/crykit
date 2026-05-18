@@ -1,2 +1,0 @@
-/usr/bin/ar qc libciphers_lib.a CMakeFiles/ciphers_lib.dir/dummy.cpp.o
-/usr/bin/ranlib libciphers_lib.a
