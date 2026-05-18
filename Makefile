@@ -1,0 +1,17 @@
+BUILD_DIR = build
+
+all: $(BUILD_DIR)/CMakeCache.txt
+	cmake --build $(BUILD_DIR)
+	cp $(BUILD_DIR)/cli/crykit .
+
+$(BUILD_DIR)/CMakeCache.txt:
+	cmake -B $(BUILD_DIR) -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+	ln -sf $(BUILD_DIR)/compile_commands.json compile_commands.json
+
+clean:
+	rm -rf $(BUILD_DIR)
+	rm ./crykit ./compile_commands.json -rf
+
+re: clean all
+
+.PHONY: all clean re

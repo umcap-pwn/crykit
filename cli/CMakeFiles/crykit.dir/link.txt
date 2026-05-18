@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/crykit.dir/link.d CMakeFiles/crykit.dir/main.cpp.o -o crykit  ../ciphers/libciphers_lib.a
