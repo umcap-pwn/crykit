@@ -1,3 +1,4 @@
+CXXFLAGS = "-O2 -Wall -Wextra"
 BUILD_DIR = build
 
 all: $(BUILD_DIR)/CMakeCache.txt
@@ -5,7 +6,8 @@ all: $(BUILD_DIR)/CMakeCache.txt
 	cp $(BUILD_DIR)/cli/crykit .
 
 $(BUILD_DIR)/CMakeCache.txt:
-	cmake -B $(BUILD_DIR) -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+	cmake -B $(BUILD_DIR) -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=ON\
+		-DCMAKE_CXX_FLAGS=$(CXXFLAGS)
 	ln -sf $(BUILD_DIR)/compile_commands.json compile_commands.json
 
 clean:
