@@ -7,3 +7,4 @@ crykit
 
 # compile commands for clangd to be happy
 compile_commands.json
+/cmake-build-debug/
