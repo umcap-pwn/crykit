@@ -1,4 +1,4 @@
-add_library(ciphers_lib
+add_library(ciphers_lib SHARED
     dummy.cpp
 )
 
