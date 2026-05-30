@@ -6,4 +6,4 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(ciphers)
 add_subdirectory(cli)
-# add_subdirectory(tests)
+add_subdirectory(tests)

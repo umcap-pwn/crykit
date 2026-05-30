@@ -1,7 +1,8 @@
-add_library(ciphers_lib
-    dummy.cpp
+add_library(ciphers
+        dummy.cpp
+        skel.cpp
 )
 
-target_include_directories(ciphers_lib PUBLIC
+target_include_directories(ciphers PUBLIC
     ${PROJECT_SOURCE_DIR}/include
 )
