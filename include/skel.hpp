@@ -9,8 +9,8 @@
 namespace cipher::skel {
 
     // Обязательные методы, должны быть реализованы для каждого ключа
-    bool encrypt(std::string key, std::string plaintext, std::string cipher);
-    bool decrypt(std::string key, std::string cipher, std::string plaintext);
+    bool encrypt(const std::string& key, const std::string& plaintext, std::string& cipher);
+    bool decrypt(const std::string& key, const std::string& cipher, std::string& plaintext);
 
     // Опциональне методы а-ля generateKey, display и т.д.
     // Здесь должны быть только те, доступ к которым нужен извне. Внутренние функции оставьте в .cpp
