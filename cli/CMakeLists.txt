@@ -3,7 +3,7 @@ add_executable ( crykit
 )
 
 target_link_libraries(crykit  PRIVATE 
-        ciphers_lib
+        ciphers
 )
 
 target_include_directories(crykit PUBLIC
