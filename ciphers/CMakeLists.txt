@@ -1,6 +1,7 @@
 add_library(ciphers
         dummy.cpp
         skel.cpp
+        otp.cpp
 )
 
 target_include_directories(ciphers PUBLIC

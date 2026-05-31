@@ -14,6 +14,6 @@ int main() {
     assert(ok);
     assert(decrypted == plaintext);
 
-    std::cout << "skel: Все тесты пройдены." << std::endl;
+    std::cout << "Скелет шифра прошел все тесты, йей! :3" << std::endl;
     return 0;
 }
