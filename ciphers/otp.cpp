@@ -13,7 +13,7 @@ namespace cipher::otp {
         const char *key_dat = key.data();
         char *out_dat = output.data();
 
-        for (int i = 0; i < key.size(); i++) {
+        for (size_t i = 0; i < key.size(); i++) {
             out_dat[i] = static_cast<char>(ptext_dat[i] ^ key_dat[i]);
         }
 
@@ -32,7 +32,7 @@ namespace cipher::otp {
         const char *key_dat = key.data();
         char *out_dat = output.data();
 
-        for (int i = 0; i < key.size(); i++) {
+        for (size_t i = 0; i < key.size(); i++) {
             out_dat[i] = static_cast<char>(cipher_dat[i] ^ key_dat[i]);
         }
 
