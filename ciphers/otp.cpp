@@ -1,6 +1,29 @@
 #include "otp.hpp"
+#include <string>
+#include <utility>
 
 namespace cipher::otp {
+
+    void otp(const std::string &plaintext, std::string &cipher, std::string &key, rng type) {
+
+        size_t len = plaintext.length();
+        std::string generated_key(len, '\0');
+
+        switch (type) {
+            case AUTO:
+                break;
+            case MT19937:
+                break;
+            default:
+                std::unreachable();
+        }
+
+        bool ok = encrypt(generated_key, plaintext, cipher);
+        if (!ok)
+            return;
+
+        key = generated_key;
+    }
 
     bool encrypt(const std::string& key, const std::string& plaintext, std::string& cipher) {
 
