@@ -18,7 +18,7 @@ add_executable(test_otp_keygen test_otp_keygen.cpp)
 target_link_libraries(test_otp_keygen PRIVATE ciphers)
 
 add_test(NAME OTP_keygen_auto COMMAND test_otp auto)
-add_test(NAME OTP_keygen_urandom COMMAND test_otp dev_urandom)
+add_test(NAME OTP_keygen_urandom COMMAND test_otp urandom)
 add_test(NAME OTP_keygen_mt19937 COMMAND test_otp mt19937)
 add_test(NAME OTP_keygen_allones COMMAND test_otp allones)
 

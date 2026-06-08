@@ -17,7 +17,7 @@ namespace cipher::otp {
     bool encrypt(const std::string& key, const std::string& plaintext, std::string& cipher);
 
     // Функция обертки. Использует список существующих генераторов варьируещейся криптостойкости.
-    void otp(const std::string &plaintext, std::string &cypher, std::string &key, rng=AUTO);
+    bool otp(const std::string &plaintext, std::string &cypher, std::string &key, rng type=AUTO);
 
     bool decrypt(const std::string& key, const std::string& cipher, std::string& plaintext);
 }

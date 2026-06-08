@@ -9,11 +9,13 @@ void test_type(cipher::otp::rng t) {
     std::string plaintext = "message~";
     std::string encrypted, decrypted;
 
-    cipher::otp::otp(key, plaintext, encrypted, t);
+    bool ok = cipher::otp::otp(key, plaintext, encrypted, t);
+    assert(ok);
     assert(key.length() == plaintext.length());
     assert(key.length() == encrypted.length());
 
-    cipher::otp::decrypt(key, encrypted, decrypted);
+    ok = cipher::otp::decrypt(key, encrypted, decrypted);
+    assert(ok);
     assert(decrypted == plaintext);
 
     std::cout << "OTP: генерация ключей методом " << t <<  " работает штатно." << std::endl;
