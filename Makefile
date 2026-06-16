@@ -16,4 +16,7 @@ clean:
 
 re: clean all
 
+test: all
+	cd $(BUILD_DIR) && ctest --rerun-failed --output-on-failure
+
 .PHONY: all clean re
