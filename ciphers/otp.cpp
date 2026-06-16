@@ -1,11 +1,11 @@
 #include "otp.hpp"
 #include <cstddef>
 #include <cstring>
-#include <iostream>
 #include <random>
 #include <string>
 #include <utility>
 #include <sys/random.h>
+#include <openssl/rand.h>
 
 // Use UNIX getrandom(2) instead of stl-implemented std::random_device
 #define OTP_RAND_GLIBC
@@ -42,6 +42,14 @@ namespace cipher::otp {
                 #endif // OTP_RAND_GLIBC
                 }
                 break;
+
+            case SSL_RANDOM: {
+                auto rand = RAND_bytes((unsigned char*)generated_key.data(), generated_key.length());
+                if (rand == 0)
+                    return false;
+                }
+                break;
+
             default:
                 std::unreachable();
         }

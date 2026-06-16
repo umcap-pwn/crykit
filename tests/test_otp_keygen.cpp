@@ -34,5 +34,7 @@ int main(int argc, const char **argv) {
         test_type(cipher::otp::MT19937);
     else if (arg == "allones")
         test_type(cipher::otp::ALL_ONES);
+    else if (arg == "ssl")
+        test_type(cipher::otp::SSL_RANDOM);
     else return -1;
 }
