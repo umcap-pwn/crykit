@@ -1,6 +1,5 @@
 # Добавить сюда имя файла с вашим шифром
 add_library(ciphers SHARED
-        dummy.cpp
         skel.cpp
         otp.cpp
 )
