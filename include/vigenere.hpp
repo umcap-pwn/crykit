@@ -3,9 +3,6 @@
 #include <string>
 #include <random>
 
-//vigenere
-
-
 namespace cipher::vigenere {
 
     bool encrypt(const std::string& key, const std::string& plaintext, std::string& cipher);
@@ -15,8 +12,7 @@ namespace cipher::vigenere {
 
     bool generateKey(int keylen, std::string& key);
     std::string generateKey(int keylen);
-    // Опциональне методы а-ля generateKey, display и т.д.
-    // Здесь должны быть только те, доступ к которым нужен извне. Внутренние функции оставьте в .cpp
+
 }
 
 #endif
