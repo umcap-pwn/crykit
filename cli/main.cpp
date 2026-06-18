@@ -1,4 +1,5 @@
 #include "otp.hpp"
+#include "rc4.hpp"
 #include "skel.hpp"
 
 #include <cstdio>
@@ -206,9 +207,17 @@ int main(int argc, char** argv) {
             else
                 ok = cipher::otp::decrypt(key, input, output);
         }
+    } else if (cfg.cipher_name == "rc4") {
+        if (!key_provided) {
+            die("Необходим путь к файлу ключа. Укажите в --key");
+        }
+        if (cfg.encrypt_mode)
+            ok = cipher::rc4::encrypt(key, input, output);
+        else
+            ok = cipher::rc4::decrypt(key, input, output);
     } else {
         die("Неизвестный шифр: " + cfg.cipher_name +
-            " (доступные опции: skel, otp)");
+            " (доступные опции: skel, otp, rc4)");
     }
     if (!ok)
         die("Не удалось зашифровать файл");

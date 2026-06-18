@@ -1,6 +1,5 @@
 #ifndef CIPHERS_RC4_HPP
 #define CIPHERS_RC4_HPP
-#include <array>
 #include <cstdint>
 #include <string>
 
