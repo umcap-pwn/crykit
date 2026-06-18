@@ -2,6 +2,7 @@
 add_library(ciphers SHARED
         skel.cpp
         otp.cpp
+        rc4.cpp
 )
 
 target_link_libraries(ciphers PRIVATE OpenSSL::SSL OpenSSL::Crypto)

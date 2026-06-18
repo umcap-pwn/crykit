@@ -22,4 +22,8 @@ add_test(NAME OTP_keygen_mt19937 COMMAND test_otp_keygen mt19937)
 add_test(NAME OTP_keygen_allones COMMAND test_otp_keygen allones)
 add_test(NAME OTP_keygen_ssl     COMMAND test_otp_keygen ssl)
 
+add_executable(test_rc4 test_rc4.cpp)
+target_link_libraries(test_rc4 PRIVATE ciphers)
+add_test(NAME RC4_encrypt_decrypt COMMAND test_rc4)
+
 target_include_directories(test_otp_keygen PUBLIC ${PROJECT_SOURCE_DIR}/include)
