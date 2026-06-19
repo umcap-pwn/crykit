@@ -35,8 +35,8 @@ public:
     Matrix(size_t rows, size_t cols, T fill = T())
         : rows_(rows), cols_(cols), data_(rows * cols, fill) {}
 
-    T& at(size_t i, size_t j)             { return data_[i * cols_ + j]; }
-    const T& at(size_t i, size_t j) const { return data_[i * cols_ + j]; }
+    T& at(size_t i, size_t j){return data_[i * cols_ + j]; }
+    const T& at(size_t i, size_t j) const {return data_[i * cols_ + j];}
 
     size_t rows() const { return rows_; }
     size_t cols() const { return cols_; }

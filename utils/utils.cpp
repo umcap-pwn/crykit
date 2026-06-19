@@ -5,7 +5,7 @@
 namespace utils{
 
     //Паддинг (PKCS#7)
-    std::string pad(std::string& data, size_t block_size){
+    std::string pad(const std::string& data, size_t block_size){
         if (block_size == 0 || block_size > 255) {
             throw std::invalid_argument("PKCS#7 padding: block_size must be in range [1, 255]");
         }
@@ -20,7 +20,7 @@ namespace utils{
             return padded;
     }
     //Удаление паддинга
-    std::string depad(std::string& data){
+    std::string depad(const std::string& data){
         size_t data_len = data.size();
         unsigned char pad_len = static_cast<unsigned char>(data[data_len - 1]);
         //Проверяем, что все байты паддинга равны pad_len
