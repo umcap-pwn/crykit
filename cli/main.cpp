@@ -1,6 +1,7 @@
 #include "otp.hpp"
 #include "rc4.hpp"
 #include "skel.hpp"
+#include "hill.hpp"
 
 #include <cstdio>
 #include <cstdlib>
@@ -215,6 +216,22 @@ int main(int argc, char** argv) {
             ok = cipher::rc4::encrypt(key, input, output);
         else
             ok = cipher::rc4::decrypt(key, input, output);
+    } else if (cfg.cipher_name == "hill") {
+        if(cfg.encrypt_mode)
+            if (!key_provided){
+                ok = cipher::hill::encrypt(key, input, output);
+                if (ok) {
+                    if (!cfg.key_out_file.empty()) {
+                        if (!write_file(cfg.key_out_file, key))
+                            die("Cannot write generated key to " +
+                                cfg.key_out_file);
+                    }
+                }
+            }
+            else
+            ok = cipher::hill::encrypt(key, input, output);
+        else
+            ok = cipher::hill::decrypt(key, input, output);
     } else {
         die("Неизвестный шифр: " + cfg.cipher_name +
             " (доступные опции: skel, otp, rc4)");
