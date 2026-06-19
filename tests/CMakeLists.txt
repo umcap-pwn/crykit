@@ -27,3 +27,8 @@ target_link_libraries(test_rc4 PRIVATE ciphers)
 add_test(NAME RC4_encrypt_decrypt COMMAND test_rc4)
 
 target_include_directories(test_otp_keygen PUBLIC ${PROJECT_SOURCE_DIR}/include)
+
+add_executable(test_hill test_hill.cpp)
+target_link_libraries(test_hill PRIVATE ciphers)
+add_test(NAME Hill_encrypt_decrypt COMMAND test_hill)
+target_include_directories(test_hill PUBLIC ${PROJECT_SOURCE_DIR}/include)
