@@ -3,7 +3,7 @@ BUILD_DIR = build
 
 all: $(BUILD_DIR)/CMakeCache.txt
 	cmake --build $(BUILD_DIR)
-	cp $(BUILD_DIR)/cli/crykit .
+	ln -sf $(BUILD_DIR)/cli/crykit crykit
 
 $(BUILD_DIR)/CMakeCache.txt:
 	cmake -B $(BUILD_DIR) -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=ON\

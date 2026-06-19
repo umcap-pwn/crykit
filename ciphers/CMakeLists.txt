@@ -1,8 +1,8 @@
 # Добавить сюда имя файла с вашим шифром
 add_library(ciphers SHARED
-        dummy.cpp
         skel.cpp
         otp.cpp
+        rc4.cpp
 )
 
 target_link_libraries(ciphers PRIVATE OpenSSL::SSL OpenSSL::Crypto)
